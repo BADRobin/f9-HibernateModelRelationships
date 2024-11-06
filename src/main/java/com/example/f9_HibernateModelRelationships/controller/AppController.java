@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -22,5 +23,17 @@ public class AppController {
         List<Category> categoryList= categoryRepository.findAll();
         model.addAttribute("categoryList", categoryList);
         return "index";
+    }
+
+    @GetMapping("/{categorySlug}")
+    public String category(@PathVariable String categorySlug, Model model) {
+        System.out.println(categorySlug);
+        model.addAttribute("slug", categorySlug);
+
+        // Show all the products that belong to this slug
+        // remember we don't have the id just the slug to find the category
+        // and respective products...
+
+        return "category";
     }
 }

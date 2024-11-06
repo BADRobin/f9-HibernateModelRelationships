@@ -10,13 +10,13 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     private String name;
 
     @ManyToOne
 //    @JoinColumn(name = "category_id")
-    private Category category;
+    private Category category; // category_id which is SQL standard so it will just find it automatically
 
     private Long stock;
 

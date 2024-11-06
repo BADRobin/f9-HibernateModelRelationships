@@ -12,11 +12,9 @@
 
 <ul>
     <li th:each="category : ${categoryList}">
-<!--        <a th:text="category.getName" th:href="'/'+  ${category.getSlug()}"></a>-->
-        <a th:text="category.getName" th:href="@{/{slug}(slug=${category.getSlug()})}">User Profile</a>
+        <!--            <a th:text="${category.getName()}" th:href="'/' + ${category.getSlug()}"></a>-->
+        <a th:text="${category.getName()}" th:href="@{/{slug}(slug=${category.getSlug()})}"></a>
     </li>
-    <li><a href="/shoes">Shoes</a></li>
-    <li><a href="/shoes">Shoes</a></li>
 </ul>
 </body>
 </html>
