@@ -10,4 +10,4 @@ COPY --from=build /target/docker-render-0.0.1-SNAPSHOT.jar f9-HibernateModelRela
 
 EXPOSE 8088
 
-CMD ["java", "-jar", "docker-render.jar"]
+CMD ["java", "-jar", "f9-HibernateModelRelationships.jar"]
