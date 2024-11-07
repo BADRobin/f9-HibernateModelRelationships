@@ -6,7 +6,7 @@ RUN mvn clean package -Dskiptest
 
 FROM openjdk:17.0.1-jdk-slim
 
-COPY --from=build /target/docker-render-0.0.1-SNAPSHOT.jar docker-render.jar
+COPY --from=build /target/docker-render-0.0.1-SNAPSHOT.jar f9-HibernateModelRelationships.jar
 
 EXPOSE 8088
 
