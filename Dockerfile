@@ -4,7 +4,7 @@ COPY . .
 
 RUN mvn clean package -DskipTest
 
-FROM openjdk:21.0.2-jdk-slim
+FROM openjdk:21.0.2-jdk
 
 COPY --from=build /target/f9-HibernateModelRelationships-0.0.1-SNAPSHOT.jar f9-HibernateModelRelationships.jar
 
