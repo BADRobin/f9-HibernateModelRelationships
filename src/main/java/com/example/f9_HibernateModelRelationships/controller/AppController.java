@@ -34,6 +34,8 @@ public class AppController {
         // remember we don't have the id just the slug to find the category
         // and respective products...
 
+        Category category = categoryRepository.findBySlug(categorySlug);
+        System.out.println(category);
         return "category";
     }
 }
